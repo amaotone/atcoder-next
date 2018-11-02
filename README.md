@@ -1,6 +1,6 @@
 # AtCoder Next
 
-This tool sorts past problems of AtCoder and tells you the next problem to solve.
+This tool tells you the next problem to solve at AtCoder.
 
 ## Usage
 
