@@ -7,13 +7,13 @@ This tool sorts past problems of AtCoder and tells you the next problem to solve
 Show the next problem.
 
 ```bash
-$ acn show
+$ atcoder_next show
 ```
 
 Download the list of contests and problems.
 
 ```bash
-$ acn download
+$ atcoder_next download
 ```
 
 ## Author
