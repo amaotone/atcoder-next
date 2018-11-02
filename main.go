@@ -59,14 +59,16 @@ func main() {
 	app.Version = "0.1"
 	app.Commands = []cli.Command{
 		{
-			Name:   "download",
-			Usage:  "Download the information of contests and problems.",
-			Action: download,
+			Name:    "download",
+			Aliases: []string{"d"},
+			Usage:   "Download the information of contests and problems.",
+			Action:  download,
 		},
 		{
-			Name:   "show",
-			Usage:  "Show the next problem to solve.",
-			Action: show,
+			Name:    "show",
+			Aliases: []string{"s"},
+			Usage:   "Show the next problem to solve.",
+			Action:  show,
 		},
 	}
 	app.Run(os.Args)

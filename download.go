@@ -2,6 +2,7 @@ package main
 
 import (
 	"fmt"
+	"os"
 
 	"github.com/levigross/grequests"
 	homedir "github.com/mitchellh/go-homedir"
@@ -9,19 +10,16 @@ import (
 )
 
 func download(c *cli.Context) {
-	home, err := homedir.Dir()
-	if err != nil {
-		fmt.Println("Cannot find home: " + err.Error())
-		return
-	}
-	baseDir := home + "/.atcoder_next"
+	baseDir, _ := homedir.Expand("~/.atcoder_next")
+	os.Mkdir(baseDir, os.ModePerm)
+
 	endpointBase := "https://kenkoooo.com/atcoder/atcoder-api"
 
 	fmt.Println("Download problems.json")
 	downloadJson(endpointBase+"/info/merged-problems", baseDir+"/problems.json")
 
 	fmt.Println("Download contests.json")
-	downloadJson(endpointBase+"/info/contest", baseDir+"/contests.json")
+	downloadJson(endpointBase+"/info/contests", baseDir+"/contests.json")
 }
 
 func downloadJson(url string, filename string) error {
